@@ -80,6 +80,8 @@ h2,
 h3,
 h4,
 h5 {
+  padding-bottom: 2vh;
+  padding-top: 2vh;
   margin: 0;
   font-family: var(--headingFont);
   font-weight: 400;
