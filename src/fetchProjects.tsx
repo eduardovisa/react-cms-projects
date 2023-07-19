@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { createClient } from 'contentful';
 import { useState, useEffect } from 'react';
+import { ProjectsInterface } from './data';
 
 const client = createClient({
   space: 'xu9i935s8wkm',
   environment: 'master',
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   accessToken: import.meta.env.VITE_API_KEY,
 });
 
@@ -30,11 +30,15 @@ export const useFetchProjects = () => {
       });
 
       const projects = response.items.map((item) => {
-        const { title, urlCode, urlDemo, image, level } = item.fields;
+        const data: ProjectsInterface = item.fields;
 
         const id = parseInt(item.sys.id);
-        const img = image?.fields?.file?.url;
-        const imgName = image?.fields?.file?.fileName;
+        const title = data.title;
+        const urlCode = data.urlCode;
+        const urlDemo = data.urlDemo;
+        const img = data.image.fields.file.url;
+        const imgName = data.image.fields.file.fileName;
+        const level = data.level;
 
         return { id, title, urlCode, urlDemo, img, imgName, level };
       });

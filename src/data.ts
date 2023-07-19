@@ -1,15 +1,61 @@
-interface Projects {
+export interface ProjectsInterface {
   title: string;
-  url: string;
-  image: string;
+  urlCode: string;
+  urlDemo: string;
+  image: DataImage;
+  level: string;
 }
 
-const projects: Projects[] = [
-  {
-    title: 'sd',
-    image: ' sdsa',
-    url: 'sda',
-  },
-];
+export interface DataImage {
+  metadata: Metadata;
+  sys: ImageSys;
+  fields: Fields;
+}
 
-export default projects;
+export interface Fields {
+  title: string;
+  description: string;
+  file: File;
+}
+
+export interface File {
+  url: string;
+  details: Details;
+  fileName: string;
+  contentType: string;
+}
+
+export interface Details {
+  size: number;
+  image: DetailsImage;
+}
+
+export interface DetailsImage {
+  width: number;
+  height: number;
+}
+
+export interface Metadata {
+  tags: unknown[];
+}
+
+export interface ImageSys {
+  space: Environment;
+  id: string;
+  type: string;
+  createdAt: string;
+  updatedAt: string;
+  environment: Environment;
+  revision: number;
+  locale: string;
+}
+
+export interface Environment {
+  sys: EnvironmentSys;
+}
+
+export interface EnvironmentSys {
+  id: string;
+  type: string;
+  linkType: string;
+}
