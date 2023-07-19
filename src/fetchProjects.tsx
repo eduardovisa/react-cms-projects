@@ -1,6 +1,6 @@
 import { createClient } from 'contentful';
 import { useState, useEffect } from 'react';
-import { ProjectsInterface } from './data';
+import { FieldsData } from './data';
 
 const client = createClient({
   space: 'xu9i935s8wkm',
@@ -30,7 +30,7 @@ export const useFetchProjects = () => {
       });
 
       const projects = response.items.map((item) => {
-        const data: ProjectsInterface = item.fields;
+        const data: FieldsData = item.fields as unknown as FieldsData;
 
         const id = parseInt(item.sys.id);
         const title = data.title;

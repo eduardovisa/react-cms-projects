@@ -2,7 +2,6 @@ import { useFetchProjects } from '../fetchProjects';
 
 const Projects = () => {
   const { loading, projects } = useFetchProjects();
-  // console.log(loading, projects);
 
   if (loading) {
     return (
@@ -22,12 +21,12 @@ const Projects = () => {
         {projects
           .filter((project) => project.level == 'basic')
           .map((project) => {
-            const { id, title, urlCode, urlDemo, img, imgName } = project;
+            const { id, title, urlDemo, img, imgName } = project;
 
             return (
               <a
                 key={`card-${id}`}
-                href={urlCode}
+                href={urlDemo}
                 target="_blank"
                 rel="noreferrer"
                 className="project"

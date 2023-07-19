@@ -1,4 +1,4 @@
-export interface ProjectsInterface {
+export interface FieldsData {
   title: string;
   urlCode: string;
   urlDemo: string;
@@ -36,7 +36,7 @@ export interface DetailsImage {
 }
 
 export interface Metadata {
-  tags: unknown[];
+  tags: any[];
 }
 
 export interface ImageSys {
