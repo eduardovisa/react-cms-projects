@@ -19,9 +19,10 @@ const Projects = () => {
         <div className="title-underline"></div>
       </div>
       <div className="projects-center">
-        <ul class="cards">
-          {projects.map((project) => {
-            const { id, title, urlCode, urlDemo, img } = project;
+        {projects
+          .filter((project) => project.level == 'basic')
+          .map((project) => {
+            const { id, title, urlCode, urlDemo, img, imgName } = project;
 
             return (
               <a
@@ -31,12 +32,11 @@ const Projects = () => {
                 rel="noreferrer"
                 className="project"
               >
-                <img src={img.fields.file.url} alt="" />
+                <img src={img} alt={imgName} className="img" />
                 <h5>{title}</h5>
               </a>
             );
           })}
-        </ul>
       </div>
     </section>
   );

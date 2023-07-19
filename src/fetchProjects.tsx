@@ -12,7 +12,9 @@ interface Projects {
   title: string;
   urlCode: string;
   urlDemo: string;
-  img: unknown;
+  img: string;
+  imgName: string;
+  level: string;
 }
 
 export const useFetchProjects = () => {
@@ -26,11 +28,13 @@ export const useFetchProjects = () => {
       });
 
       const projects = response.items.map((item) => {
-        const { title, urlCode, urlDemo, image } = item.fields;
-        const id = parseInt(item.sys.id);
-        const img = image;
+        const { title, urlCode, urlDemo, image, level } = item.fields;
 
-        return { id, title, urlCode, urlDemo, img };
+        const id = parseInt(item.sys.id);
+        const img = image?.fields?.file?.url;
+        const imgName = image?.fields?.file?.fileName;
+
+        return { id, title, urlCode, urlDemo, img, imgName, level };
       });
 
       setProjects(projects);
