@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { createClient } from 'contentful';
 import { useState, useEffect } from 'react';
 
 const client = createClient({
   space: 'xu9i935s8wkm',
   environment: 'master',
-  accessToken: 'ojI7KQZ2VYgT_LAOLxeDxl-zfPmcrQ35LSKCmCeqzHM',
+  accessToken: import.meta.env.VITE_API_KEY,
 });
 
 interface Projects {
