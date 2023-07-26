@@ -286,6 +286,7 @@ PROJECT CSS
 body {
   background: var(--grey-200);
 }
+
 .hero {
   min-height: 40vh;
   background: var(--white);
@@ -294,22 +295,27 @@ body {
   justify-content: center;
   padding: 5rem;
 }
+
 .img-container {
   display: none;
 }
+
 .hero-center {
   width: 90vw;
   max-width: var(--max-width);
 }
+
 .hero-title h1 {
   margin-bottom: 2rem;
   font-weight: 700;
 }
+
 .hero-title p {
   line-height: 2;
-  max-width: 35em;
+  max-width: 35rem;
   color: var(--grey-600);
 }
+
 @media (min-width: 992px) {
   .hero-center {
     display: grid;
@@ -317,12 +323,13 @@ body {
     place-items: center;
     gap: 4rem;
   }
+
   .img-container {
     display: block;
   }
 }
 
-/* 
+/*
 ============= 
 PROJECTS 
 =============
@@ -331,6 +338,7 @@ PROJECTS
 .projects {
   padding: 5rem 0;
 }
+
 .projects-center {
   width: 90vw;
   max-width: var(--max-width);
@@ -339,6 +347,7 @@ PROJECTS
   display: grid;
   gap: 2rem;
 }
+
 .project {
   background: var(--white);
   display: block;
@@ -346,6 +355,7 @@ PROJECTS
   box-shadow: var(--shadow-2);
   transition: var(--transition);
 }
+
 .project:hover {
   transform: scale(1.05);
   box-shadow: var(--shadow-4);
@@ -368,6 +378,7 @@ PROJECTS
     grid-template-columns: 1fr 1fr;
   }
 }
+
 @media (min-width: 992px) {
   .projects-center {
     grid-template-columns: 1fr 1fr 1fr;
